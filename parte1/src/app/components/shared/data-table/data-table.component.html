@@ -1,0 +1,48 @@
+<div class="mat-elevation-z8 table-margin">
+  <mat-progress-bar mode="query" *ngIf="loading"></mat-progress-bar>
+
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let client"> {{client.nombre ? client.nombre : '-'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="monto">
+      <th mat-header-cell *matHeaderCellDef> Monto </th>
+      <td mat-cell *matCellDef="let client"> {{client.monto ? client.monto : '-'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="compro">
+      <th mat-header-cell *matHeaderCellDef> Compro </th>
+      <td mat-cell *matCellDef="let client"> {{client.compro === true ? '✓' : 'X'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tdc">
+      <th mat-header-cell *matHeaderCellDef> Tdc </th>
+      <td mat-cell *matCellDef="let client"> {{client.tdc ? client.tdc : '-'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let client"> {{client.date | date:'medium'}} </td>
+    </ng-container>
+
+    <div *ngIf="showViewColumns === true">
+      <ng-container matColumnDef="view">
+        <th mat-header-cell *matHeaderCellDef> View </th>
+        <td mat-cell *matCellDef="let client">
+          <mat-icon class="table-icon" (click)="clickEvent(client.clientId)">
+            remove_red_eye
+          </mat-icon>
+        </td>
+      </ng-container>
+    </div>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<div *ngIf="error" class="general-error-message">
+  Network error. Can't load results.
+</div>

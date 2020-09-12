@@ -1,0 +1,22 @@
+<app-navbar 
+  title="Clientes"
+  [minDate]="minDate"
+  [maxDate]="maxDate"
+  [dateByDefault]="dateByDefault"
+  [pageIndex]="pageIndex"
+  [totalClients]="totalClients"
+  [pageSize]="pageSize"
+  (captureChangeDate)="changeDate($event)"
+  (capturePage)="pageEvent($event)"
+>
+</app-navbar>
+
+<app-data-table
+  [loading]="loading"
+  [error]="error"
+  [dataSource]="clients"
+  [showViewColumns]="true"
+  [displayedColumns]="displayedColumns"
+  (captureClickDetail)="goToDetailClient($event)"
+>
+</app-data-table>

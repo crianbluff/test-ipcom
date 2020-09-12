@@ -1,0 +1,24 @@
+<mat-toolbar class="toolbar-stl">
+  <span class="toolbar-title">
+    Cliente
+  </span>
+
+  <span class="fill-remaining-space"></span>
+
+  <div class="example-button-container">
+    <button mat-raised-button color="primary" (click)="goBack()">
+      <mat-icon>
+        keyboard_arrow_left
+      </mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<app-data-table
+  [loading]="loading"
+  [error]="error"
+  [dataSource]="client"
+  [showViewColumns]="false"
+  [displayedColumns]="displayedColumns"
+>
+</app-data-table>

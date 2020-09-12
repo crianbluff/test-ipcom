@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar-stl">
+  <span class="toolbar-title">
+    {{ title }}
+  </span>
+
+  <div class="datepicker-container">
+    <mat-form-field>
+      <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [formControl]="dateByDefault" (dateChange)="changeDate($event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <span class="fill-remaining-space"></span>
+
+  <mat-paginator
+    [pageSize]="pageSize"
+    [length]="totalClients"
+    [pageIndex]="pageIndex"
+    (page)="pageEvent($event)"
+  >
+  </mat-paginator>
+</mat-toolbar>

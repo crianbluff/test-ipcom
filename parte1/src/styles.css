@@ -1,0 +1,47 @@
+table {
+  width: 100%;
+}
+
+.table-margin {
+  max-width: 1200px;
+  width: 100%;
+  margin: 14px auto;
+}
+
+.table-icon:hover {
+  color: #5752fb;
+  cursor: pointer;
+}
+
+.general-error-message {
+  margin: 15px;
+  color: #bdbdbd;
+  text-align: center;
+}
+
+.toolbar-stl {
+  z-index: 100;
+  background-color: #ffffff;
+  color: #404040;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+  position: relative;
+}
+
+.toolbar-stl .mat-paginator-page-size {
+  display: none;
+}
+
+.toolbar-title {
+  color: #5752fb;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.datepicker-container {
+  font-size: 16px;
+  margin: 3px 10px 0px 10px;
+}
